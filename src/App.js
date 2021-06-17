@@ -1,24 +1,48 @@
 // import logo from './logo.svg';
+import { useState } from 'react';
+import LoginForm from './Components/LoginForm';
 import './App.css';
 
 function App() {
+  // let login, password;
+  const adminUser = {
+    email: 'admin@gmail.com',
+    password: 'admin',
+  };
+
+  const [user, setUser] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+
+  const Login = (details) => {
+    console.log(details);
+    if (
+      details.email == adminUser.email &&
+      details.password == adminUser.password
+    ) {
+      console.log('Logged in');
+      setUser({
+        email: details.email,
+        password: details.password,
+      });
+    } else {
+      console.log("Don't match");
+    }
+  };
+
+  const Logout = () => {
+    setUser({ email: '', password: '' });
+  };
+
   return (
     <div className='App'>
-      <header className='App-header'>
-        <form>
-          <p>
-            <label>EMail:</label>
-            <input type='email' placeholder='EMAIL'></input>
-          </p>
-          <p>
-            <label>Password:</label>
-            <input type='password' placeholder='PASSWORD'></input>
-          </p>
-          <p>
-            <button onClick='loginFunc()'>Login</button>
-          </p>
-        </form>
-      </header>
+      {user.email != '' ? (
+        <div>
+          <h1>Welcome, {user.email}</h1>
+          <button onClick={Logout}>Logout</button>
+        </div>
+      ) : (
+        <LoginForm Login={Login} />
+      )}
     </div>
   );
 }
