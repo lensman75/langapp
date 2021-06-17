@@ -21,6 +21,17 @@ form p input {
   font-size: calc(10px + 2vmin);
 }
 
+form p button {
+  width: 35%;
+  height: 45px;
+  font-size: calc(10px + 2vmin);
+}
+
+form > p:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -8,11 +8,14 @@ function App() {
         <form>
           <p>
             <label>EMail:</label>
-            <input type='email'></input>
+            <input type='email' placeholder='EMAIL'></input>
           </p>
           <p>
             <label>Password:</label>
-            <input type='password'></input>
+            <input type='password' placeholder='PASSWORD'></input>
+          </p>
+          <p>
+            <button onClick='loginFunc()'>Login</button>
           </p>
         </form>
       </header>
