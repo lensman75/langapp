@@ -1,10 +1,8 @@
-// import logo from './logo.svg';
 import { useState } from 'react';
 import LoginForm from './Components/LoginForm';
 import './App.css';
 
 function App() {
-  // let login, password;
   const adminUser = {
     email: 'admin@gmail.com',
     password: 'admin',
